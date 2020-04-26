@@ -1,8 +1,13 @@
+@memo = {}
 def Fibonacci_number(n)
-    if n == 1 or n == 2
-        return 1
+    return @memo[n] if @memo.has_key?(n)
+    
+    if n == 0 or n == 1
+        return @memo[n] = 1
     end
-    Fibonacci_number(n-1) + Fibonacci_number(n-2)
+
+    @memo[n] = Fibonacci_number(n-1) + Fibonacci_number(n-2)
+    @memo[n]
 end
 
 answers = []

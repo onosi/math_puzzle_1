@@ -1,17 +1,18 @@
 @memo = {}
 def Fibonacci_number(n)
-    return @memo[n] if @memo.has_key?(n)
-    
+
     if n == 0 or n == 1
         return @memo[n] = 1
     end
 
-    @memo[n] = Fibonacci_number(n-1) + Fibonacci_number(n-2)
+    (2..n).each do |i|
+        @memo[i] = @memo[i-1] + @memo[i-2]
+    end
     @memo[n]
 end
 
 answers = []
-n = 2
+n = -1
 
 while answers.size != 9
     n += 1
